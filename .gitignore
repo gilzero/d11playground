@@ -1,0 +1,7 @@
+# Ignore everything in sites/default
+sites/default/*
+
+# If you want to keep any specific files, like settings.local.php, uncomment the line below
+# !sites/default/settings.local.php
+
+# You can allow other specific directories or files if needed.
