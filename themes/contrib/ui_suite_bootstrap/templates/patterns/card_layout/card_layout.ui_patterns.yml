@@ -1,0 +1,21 @@
+card_layout:
+  label: "Card Layout"
+  description: "In addition to styling the content within cards, Bootstrap includes a few options for laying out series of cards. For the time being, these layout options are not yet responsive."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/card/#card-layout'
+  category: "Card"
+  fields:
+    cards:
+      type: "render"
+      label: "Cards"
+      description: "An array of card patterns."
+      preview:
+        - type: "pattern_preview"
+          id: "card"
+          variant: "default"
+        - type: "pattern_preview"
+          id: "card"
+          variant: "default"
+        - type: "pattern_preview"
+          id: "card"
+          variant: "default"

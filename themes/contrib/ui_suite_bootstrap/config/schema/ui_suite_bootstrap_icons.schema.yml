@@ -1,0 +1,18 @@
+ui_icons.icon_pack_options.bootstrap:
+  type: mapping
+  label: 'Bootstrap settings'
+  constraints:
+    FullyValidatable: ~
+  mapping:
+    size:
+      type: integer
+      label: 'Size'
+      constraints:
+        Range:
+          min: 0
+    color:
+      type: string
+      label: 'Color'
+    alt:
+      type: string
+      label: 'Alt text'

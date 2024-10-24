@@ -1,0 +1,105 @@
+{# Create unique attribute objects for each table group. #}
+{% set thead_attributes = create_attribute() %}
+{% set tbody_attributes = create_attribute() %}
+{% set tfoot_attributes = create_attribute() %}
+
+{% set attributes = attributes.addClass('table') %}
+{% if variant and variant|lower != 'default' %}
+  {% set variants = variant|split('__')|map(v => v|lower|replace({(v): 'table-' ~ v})|replace({'_': '-'})) %}
+  {% set attributes = attributes.addClass(variants) %}
+{% endif %}
+
+{% if stripes %}
+  {% for stripe in stripes %}
+    {% set attributes = attributes.addClass('table-' ~ stripe|lower|replace({'_': '-'})) %}
+  {% endfor %}
+{% endif %}
+
+{% set attributes = borders ? attributes.addClass('table-' ~ borders|lower|replace({'_': '-'})) : attributes %}
+{% set attributes = hover ? attributes.addClass('table-hover') : attributes %}
+{% set attributes = caption_top ? attributes.addClass('caption-top') : attributes %}
+
+{% if header_color %}
+  {% set thead_attributes = thead_attributes.addClass('table-' ~ header_color|lower|replace({'_': '-'})) %}
+{% endif %}
+{% if footer_color %}
+  {% set tfoot_attributes = tfoot_attributes.addClass('table-' ~ footer_color|lower|replace({'_': '-'})) %}
+{% endif %}
+
+{% set header_length = header ? header|length : 0 %}
+{% set header_columns = header_columns|default(header_length) %}
+
+{#
+/**
+ * Table_divider may have multiple values in it, each of which must
+ * be applied to the correct table group.
+ */
+#}
+{% if divider %}
+  {% if 'thead' in divider %}
+    {% set thead_attributes = thead_attributes.addClass('table-group-divider') %}
+  {% endif %}
+  {% if 'tbody' in divider %}
+    {% set tbody_attributes = tbody_attributes.addClass('table-group-divider') %}
+  {% endif %}
+  {% if 'tfoot' in divider %}
+    {% set tfoot_attributes = tfoot_attributes.addClass('table-group-divider') %}
+  {% endif %}
+{% endif %}
+
+{% if responsive %}
+<div class="{{ 'table-' ~ responsive|lower|replace({'_': '-'}) }}">
+{% endif %}
+
+<table{{ attributes }}>
+  {% if caption %}
+    <caption>{{ caption }}</caption>
+  {% endif %}
+
+  {% for colgroup in colgroups %}
+    {% if colgroup.cols %}
+      <colgroup{{ colgroup.attributes }}>
+        {% for col in colgroup.cols %}
+          <col{{ col.attributes }} />
+        {% endfor %}
+      </colgroup>
+    {% else %}
+      <colgroup{{ colgroup.attributes }} />
+    {% endif %}
+  {% endfor %}
+
+  {% if header %}
+    <thead{{ thead_attributes }}>
+      {{ pattern('table_row', {
+        'cells': header
+      }) }}
+    </thead>
+  {% endif %}
+
+  {% if rows %}
+    <tbody{{ tbody_attributes }}>
+      {{ rows }}
+    </tbody>
+  {% elseif empty %}
+    <tbody{{ tbody_attributes }}>
+      {{ pattern('table_row', {
+        'cells': pattern('table_cell', {
+          'attributes': create_attribute({
+            'colspan': header_columns,
+          }),
+          'content': empty
+        })
+      }) }}
+    </tbody>
+  {% endif %}
+
+  {% if footer %}
+    <tfoot{{ tfoot_attributes }}>
+      {{ footer }}
+    </tfoot>
+  {% endif %}
+</table>
+
+{% if responsive %}
+</div>
+{% endif %}

@@ -1,0 +1,89 @@
+nav:
+  label: "Nav"
+  description: "The base .nav component is built with flexbox and provide a strong foundation for building all types of navigation components. It includes some style overrides (for working with lists), some link padding for larger hit areas, and basic disabled styling."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/navs-tabs/'
+  category: "Navs and tabs"
+  variants:
+    default:
+      label: "Default"
+    tabs:
+      label: "Tabs"
+    tabs__fill:
+      label: "Tabs"
+    tabs__justified:
+      label: "Tabs"
+    pills:
+      label: "Pills"
+    pills__fill:
+      label: "Pills filled"
+    pills__justified:
+      label: "Pills filled with same width"
+    underline:
+      label: "Underline"
+  settings:
+    nav_id:
+      type: "textfield"
+      label: "ID"
+      description: "Must start with a letter. Randomly generated if empty."
+    nav_type:
+      type: "select"
+      label: "List type"
+      options:
+        ul: "ul (Default)"
+        ol: "ol"
+        nav: "nav"
+      preview: "ul"
+      allow_expose: true
+      allow_token: true
+    card_header:
+      type: "boolean"
+      label: "Card header"
+      description: "Styling adjustment for tabs and pills variants when used in the header of the card component."
+      preview: false
+      allow_expose: true
+      allow_token: true
+    items:
+      type: "links"
+      label: "Nav items"
+      preview:
+        - url: "#"
+          title: "Active"
+          link_attributes:
+            class:
+              - 'active'
+        - title: "Dropdown"
+          url: "#"
+          below:
+            - title: "Dropdown header"
+              link_attributes:
+                class: [dropdown-header]
+            - title: "Action"
+              url: '#'
+            - title: "Dropdown item text"
+            - title: "Another action"
+              url: '#'
+            - title: "Something else here"
+              url: '#'
+            - {}
+            - title: "Separated link"
+              url: '#'
+            - title: "Action (button)"
+              link_attributes:
+                class: [dropdown-item]
+            - title: "Another action (button)"
+              link_attributes:
+                class: [dropdown-item]
+            - title: "Something else here (text)"
+        - url: "#"
+          title: "Much longer nav link"
+        - url: "#"
+          title: "Disabled"
+          link_attributes:
+            class:
+              - 'disabled'
+  fields:
+    tab_content:
+      type: "render"
+      label: "Tab content"
+      description: "A list of renderable elements. Each item will be put in tab panes and the nav items will be used to navigate among the panes. You need to ensure that there is the same amount of nav links and tab items."

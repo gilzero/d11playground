@@ -1,0 +1,71 @@
+offcanvas:
+  label: "Offcanvas"
+  description: "Build hidden sidebars into your project for navigation, shopping carts, and more with a few classes and our JavaScript plugin."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/offcanvas/'
+  category: "Dialog"
+  variants:
+    start:
+      label: "Start"
+    end:
+      label: "End"
+    top:
+      label: "Top"
+    bottom:
+      label: "Bottom"
+  settings:
+    responsive:
+      type: "select"
+      label: "Responsive"
+      description: "Hide content in offcanvas below the selected breakpoint. Above that breakpoint, the contents within will behave as usual."
+      options:
+        offcanvas-sm: "Hide below small"
+        offcanvas-md: "Hide below medium"
+        offcanvas-lg: "Hide below large"
+        offcanvas-xl: "Hide below extra large"
+        offcanvas-xxl: "Hide below extra extra large"
+      allow_expose: true
+      allow_token: true
+    backdrop:
+      type: "select"
+      label: "Backdrop"
+      description: "When backdrop is set to static, the offcanvas will not close when clicking outside of it."
+      options:
+        "false": "No backdrop"
+        static: "Static"
+      allow_expose: true
+      allow_token: true
+    scroll:
+      type: "boolean"
+      label: "Body scrolling"
+      description: "By default, body scrolling is disabled."
+      preview: false
+      allow_expose: true
+      allow_token: true
+    heading_level:
+      type: "select"
+      label: "Heading level"
+      description: "Heading level of the offcanvas."
+      options:
+        1: "h1"
+        2: "h2"
+        3: "h3"
+        4: "h4"
+        5: "h5 (Default)"
+        6: "h6"
+      preview: 5
+    offcanvas_id:
+      type: "textfield"
+      label: "ID"
+      description: "ID used by external buttons to toggle the visibility. Must start with a letter. Randomly generated if empty."
+  fields:
+    title:
+      type: "string"
+      label: "Title"
+      description: "Offcanvas title."
+      preview: "Offcanvas"
+    body:
+      type: "render"
+      label: "Body"
+      description: "The content of the offcanvas."
+      preview: "Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements here."

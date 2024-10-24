@@ -1,0 +1,6 @@
+{% if variant and variant|lower == 'horizontal' %}
+  {% set header = '' %}
+  {% set footer = '' %}
+  {% set attributes = attributes.setAttribute('style', 'max-width: 540px;') %}
+{% endif %}
+{% extends 'pattern-card.html.twig' %}

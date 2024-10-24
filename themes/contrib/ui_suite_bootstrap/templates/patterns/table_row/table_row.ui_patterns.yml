@@ -1,0 +1,34 @@
+table_row:
+  label: "(Table Row)"
+  description: "Internal: to be used in the 'Table' component."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/content/tables/'
+  category: "Table"
+  settings:
+    color:
+      type: "select"
+      label: "Row color"
+      options:
+        primary: "Primary"
+        secondary: "Secondary"
+        success: "Success"
+        danger: "Danger"
+        warning: "Warning"
+        info: "Info"
+        light: "Light"
+        dark: "Dark"
+      preview: ""
+      allow_expose: true
+      allow_token: true
+    active:
+      type: "boolean"
+      label: "Active"
+      description: "Active state"
+      preview: false
+      allow_expose: true
+      allow_token: true
+  fields:
+    cells:
+      type: "Render"
+      label: "Row cells"
+      description: "A sequence of cell components."

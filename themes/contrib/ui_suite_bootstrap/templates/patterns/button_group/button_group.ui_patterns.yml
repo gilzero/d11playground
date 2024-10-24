@@ -1,0 +1,44 @@
+button_group:
+  label: "Button Group"
+  description: "Group a series of buttons together on a single line with the button group, and super-power them with JavaScript."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/button-group/'
+  category: "Button"
+  variants:
+    sm:
+      label: "Small"
+    default:
+      label: "Default"
+    lg:
+      label: "Large"
+    vertical:
+      label: "Vertical"
+      description: "Make a set of buttons appear vertically stacked rather than horizontally. Split button dropdowns are not supported here."
+  settings:
+    label:
+      type: "textfield"
+      label: "Role"
+      description: "The group label. Visually hidden. Used with assistive technologies."
+      preview: "Basic example"
+      allow_token: true
+  fields:
+    buttons:
+      type: "render"
+      label: "Buttons"
+      description: "An array of 'button' patterns."
+      preview:
+        - type: "pattern"
+          id: "button"
+          variant: "secondary"
+          fields:
+            label: "First"
+        - type: "pattern"
+          id: "button"
+          variant: "secondary"
+          fields:
+            label: "Second"
+        - type: "pattern"
+          id: "button"
+          variant: "secondary"
+          fields:
+            label: "Third"

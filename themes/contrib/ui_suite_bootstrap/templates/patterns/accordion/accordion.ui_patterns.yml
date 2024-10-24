@@ -1,0 +1,73 @@
+accordion:
+  label: "Accordion"
+  description: "Render content in a box that expands and collapses vertically."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/accordion/'
+  category: "Accordion"
+  variants:
+    default:
+      label: "Default"
+    flush:
+      label: "Flush"
+      description: "Remove the default background color, some borders, and some rounded corners to render accordions edge-to-edge with their parent container."
+  settings:
+    keep_open:
+      type: "boolean"
+      label: "Keep open?"
+      description: "Make accordion items stay open when another item is opened."
+      preview: false
+      allow_expose: true
+      allow_token: true
+    accordion_id:
+      type: "textfield"
+      label: "ID"
+      description: "Must start with a letter. Randomly generated if empty."
+  fields:
+    content:
+      type: "list"
+      label: "Content"
+      description: "Accordion items."
+      preview:
+        - type: "pattern"
+          id: "accordion_item"
+          opened: true
+          fields:
+            title: "Accordion Item #1"
+            content:
+              type: "html_tag"
+              tag: "p"
+              value: "Mollis pretium lorem primis senectus habitasse lectus scelerisque donec, ultricies tortor suspendisse adipiscing fusce morbi volutpat pellentesque, consectetur mi risus molestie curae malesuada cum. Dignissim lacus convallis massa mauris enim ad mattis magnis senectus montes, mollis taciti phasellus accumsan bibendum semper blandit suspendisse faucibus nibh est, metus lobortis morbi cras magna vivamus per risus fermentum."
+        - type: "pattern"
+          id: "accordion_item"
+          opened: false
+          fields:
+            title: "Accordion Item #2"
+            content:
+              type: "html_tag"
+              tag: "p"
+              value: "Mollis pretium lorem primis senectus habitasse lectus scelerisque donec, ultricies tortor suspendisse adipiscing fusce morbi volutpat pellentesque, consectetur mi risus molestie curae malesuada cum. Dignissim lacus convallis massa mauris enim ad mattis magnis senectus montes, mollis taciti phasellus accumsan bibendum semper blandit suspendisse faucibus nibh est, metus lobortis morbi cras magna vivamus per risus fermentum."
+        - type: "pattern"
+          id: "accordion_item"
+          opened: false
+          fields:
+            title: "Accordion Item #3"
+            content:
+              type: "html_tag"
+              tag: "p"
+              value: "Mollis pretium lorem primis senectus habitasse lectus scelerisque donec, ultricies tortor suspendisse adipiscing fusce morbi volutpat pellentesque, consectetur mi risus molestie curae malesuada cum. Dignissim lacus convallis massa mauris enim ad mattis magnis senectus montes, mollis taciti phasellus accumsan bibendum semper blandit suspendisse faucibus nibh est, metus lobortis morbi cras magna vivamus per risus fermentum."
+        - type: "pattern"
+          id: "accordion_item"
+          opened: false
+          fields:
+            title: "Accordion Item #4"
+            content:
+              type: "html_tag"
+              tag: "p"
+              value: "Mollis pretium lorem primis senectus habitasse lectus scelerisque donec, ultricies tortor suspendisse adipiscing fusce morbi volutpat pellentesque, consectetur mi risus molestie curae malesuada cum. Dignissim lacus convallis massa mauris enim ad mattis magnis senectus montes, mollis taciti phasellus accumsan bibendum semper blandit suspendisse faucibus nibh est, metus lobortis morbi cras magna vivamus per risus fermentum."
+  libraries:
+    - accordion:
+        js:
+          js/accordion.js: {}
+        dependencies:
+          - core/drupal
+          - core/once

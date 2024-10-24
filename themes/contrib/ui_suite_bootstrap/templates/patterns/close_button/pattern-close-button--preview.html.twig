@@ -1,0 +1,7 @@
+{% if variant and variant|lower == 'white' %}
+  <div class="bg-dark">
+{% endif %}
+    {{ include('pattern-close-button.html.twig') }}
+{% if variant and variant|lower == 'white' %}
+  </div>
+{% endif %}

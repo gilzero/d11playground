@@ -1,0 +1,52 @@
+{% set dialog_attributes = create_attribute({'class': 'modal-dialog'}) %}
+{% if variant and variant|lower != 'default' %}
+  {% set variants = variant|split('__')|map(v => v|lower|replace({(v): 'modal-' ~ v})|replace({'_': '-'})) %}
+  {% set dialog_attributes = dialog_attributes.addClass(variants) %}
+{% endif %}
+
+{% set modal_id = modal_id|default("modal-" ~ random()) %}
+{% set heading_level = heading_level|default(1) %}
+
+{% set attributes = attributes
+  .addClass('modal')
+  .setAttribute('tabindex', '-1')
+  .setAttribute('id', modal_id)
+  .setAttribute('aria-hidden', 'true')
+%}
+
+{% set attributes = animation ? attributes.addClass('fade') : attributes %}
+{% set attributes = static ? attributes.setAttribute('data-bs-backdrop', 'static').setAttribute('data-bs-keyboard', 'false') : attributes %}
+{% set attributes = title ? attributes.setAttribute('aria-labelledby', 'label_' ~ modal_id) : attributes %}
+
+{% set dialog_attributes = centered ? dialog_attributes.addClass('modal-dialog-centered') : dialog_attributes %}
+{% set dialog_attributes = scrollable ? dialog_attributes.addClass('modal-dialog-scrollable') : dialog_attributes %}
+{% set dialog_attributes = fullscreen ? dialog_attributes.addClass(fullscreen) : dialog_attributes %}
+
+<div{{ attributes }}>
+  <div{{ dialog_attributes }}>
+    <div class="modal-content">
+      <div class="modal-header">
+        {% if title %}
+          <h{{ heading_level }} class="modal-title" id="label_{{ modal_id }}">{{ title }}</h{{ heading_level }}>
+        {% endif %}
+        {{ pattern('close_button', {
+          attributes: create_attribute({
+            'data-bs-dismiss': 'modal'
+          })
+        }) }}
+      </div>
+
+    {% if body %}
+      <div class="modal-body">
+        {{ body }}
+      </div>
+    {% endif %}
+
+    {% if footer %}
+      <div class="modal-footer">
+        {{ footer }}
+      </div>
+    {% endif %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,106 @@
+toast_container:
+  label: "Toast container"
+  description: "You can stack toasts by wrapping them in a toast container, which will vertically add some spacing."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/toasts/#stacking'
+  category: "Toast"
+  fields:
+    items:
+      type: "render"
+      label: "Toast items"
+      preview:
+        - type: "pattern"
+          id: "toast"
+          attributes:
+            class:
+              - "show"
+          header:
+            - theme: "image"
+              uri: "data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iYmQtcGxhY2Vob2xkZXItaW1nIHJvdW5kZWQgbWUtMiIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBzbGljZSIgZm9jdXNhYmxlPSJmYWxzZSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzAwN2FmZiI+PC9yZWN0Pjwvc3ZnPg=="
+              attributes:
+                class:
+                  - "rounded"
+                  - "me-2"
+            - type: "html_tag"
+              tag: "strong"
+              value: "Bootstrap"
+              attributes:
+                class:
+                  - "me-auto"
+            - type: "html_tag"
+              tag: "small"
+              value: "just now"
+              attributes:
+                class:
+                  - "text-muted"
+          content: "See? Just like this."
+        - type: "pattern"
+          id: "toast"
+          attributes:
+            class:
+              - "show"
+          header:
+            - theme: "image"
+              uri: "data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iYmQtcGxhY2Vob2xkZXItaW1nIHJvdW5kZWQgbWUtMiIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBzbGljZSIgZm9jdXNhYmxlPSJmYWxzZSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzAwN2FmZiI+PC9yZWN0Pjwvc3ZnPg=="
+              attributes:
+                class:
+                  - "rounded"
+                  - "me-2"
+            - type: "html_tag"
+              tag: "strong"
+              value: "Bootstrap"
+              attributes:
+                class:
+                  - "me-auto"
+            - type: "html_tag"
+              tag: "small"
+              value: "2 seconds ago"
+              attributes:
+                class:
+                  - "text-muted"
+          content: "Heads up, toasts will stack automatically"
+        - type: "pattern"
+          id: "toast"
+          attributes:
+            class:
+              - "show"
+          content: "Hello, world! This is a toast message."
+          flex_wrapper: true
+        - type: "pattern"
+          id: "toast"
+          attributes:
+            class:
+              - "show"
+          content:
+            - markup: "Hello, world! This is a toast message."
+            - type: "html_tag"
+              tag: "div"
+              attributes:
+                class:
+                  - "mt-2"
+                  - "pt-2"
+                  - "border-top"
+            - type: "pattern"
+              id: "button"
+              variant: "primary__sm"
+              fields:
+                label: "Take action"
+            - type: "pattern"
+              id: "button"
+              variant: "secondary__sm"
+              fields:
+                label: "Close"
+              attributes:
+                data-bs-dismiss: "toast"
+          hide_close_button: true
+        - type: "pattern"
+          id: "toast"
+          attributes:
+            class:
+              - "show"
+              - "align-items-center"
+              - "text-bg-primary"
+              - "border-0"
+          content: "Hello, world! This is a toast message."
+          flex_wrapper: true
+          close_button_variant: "white"

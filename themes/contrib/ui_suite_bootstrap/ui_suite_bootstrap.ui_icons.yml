@@ -1,0 +1,40 @@
+bootstrap:
+  label: "Bootstrap"
+  description: "Bootstrap icons from SVG files."
+  links:
+    - https://icons.getbootstrap.com/#usage
+  license: MIT
+  license_url: https://github.com/twbs/icons/blob/main/LICENSE
+  extractor: svg
+  config:
+    sources:
+      - /libraries/bootstrap-icons/icons/{icon_id}.svg
+  settings:
+    size:
+      title: "Size"
+      type: "integer"
+      default: 32
+    color:
+      title: "Color"
+      type: "string"
+      format: "color"
+    alt:
+      title: "Alt text"
+      type: "string"
+      description: "Accessibility alternative text, leave empty for decorative icon."
+  template: >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="bi bi-{{ icon_id }}"
+      width="{{ size|default(32) }}"
+      height="{{ size|default(32) }}"
+      fill="{{ color|default(currentColor) }}"
+      viewBox="0 0 16 16"
+      {% if alt is empty %}
+        aria-hidden="true"
+      {% else %}
+        aria-label="{{ alt }}"
+      {% endif %}
+    >
+      {{ content }}
+    </svg>

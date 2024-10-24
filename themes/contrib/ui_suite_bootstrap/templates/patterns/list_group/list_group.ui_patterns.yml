@@ -1,0 +1,84 @@
+list_group:
+  label: "List Group"
+  description: "List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/list-group/'
+  category: "List group"
+  variants:
+    default:
+      label: "Default"
+      description: "The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed."
+    flush:
+      label: "Flush"
+      description: "Add .list-group-flush to remove some borders and rounded corners to render list group items edge-to-edge in a parent container (e.g., cards)."
+    numbered:
+      label: "Numbered"
+      description: "Add the .list-group-numbered modifier class (and optionally use an <ol> element) to opt into numbered list group items."
+    horizontal:
+      label: "Horizontal"
+      description: "Add .list-group-horizontal to change the layout of list group items from vertical to horizontal across all breakpoints. Currently horizontal list groups cannot be combined with flush list groups."
+    horizontal_sm:
+      label: "Horizontal Small"
+      description: "Horizontal starts at breakpoint small."
+    horizontal_md:
+      label: "Horizontal Medium"
+      description: "Horizontal starts at breakpoint medium."
+    horizontal_lg:
+      label: "Horizontal Large"
+      description: "Horizontal starts at breakpoint large."
+    horizontal_xl:
+      label: "Horizontal Extra large"
+      description: "Horizontal starts at breakpoint extra large."
+    horizontal_xxl:
+      label: "Horizontal Extra extra large"
+      description: "Horizontal starts at breakpoint extra extra large."
+    numbered__horizontal:
+      label: "Numbered Horizontal"
+      description: "Add the .list-group-numbered modifier class (and optionally use an <ol> element) to opt into numbered list group items. Add .list-group-horizontal to change the layout of list group items from vertical to horizontal across all breakpoints. Currently horizontal list groups cannot be combined with flush list groups."
+    numbered__horizontal_sm:
+      label: "Numbered Horizontal Small"
+      description: "Horizontal starts at breakpoint small."
+    numbered__horizontal_md:
+      label: "Numbered Horizontal Medium"
+      description: "Horizontal starts at breakpoint medium."
+    numbered__horizontal_lg:
+      label: "Numbered Horizontal Large"
+      description: "Horizontal starts at breakpoint large."
+    numbered__horizontal_xl:
+      label: "Numbered Horizontal Extra large"
+      description: "Horizontal starts at breakpoint extra large."
+    numbered__horizontal_xxl:
+      label: "Numbered Horizontal Extra extra large"
+      description: "Horizontal starts at breakpoint extra extra large."
+  fields:
+    items:
+      type: "render"
+      label: "Items"
+      description: "A list of List Group Items patterns."
+      preview:
+        - type: "pattern"
+          id: "list_group_item"
+          fields:
+            content: "The current link item"
+          settings:
+            active: true
+        - type: "pattern"
+          id: "list_group_item"
+          fields:
+            content: "A second link item"
+        - type: "pattern"
+          id: "list_group_item"
+          fields:
+            content: "A third link item"
+        - type: "pattern"
+          id: "list_group_item"
+          fields:
+            content: "A fourth link item, with a link"
+          settings:
+            url: "https://example.com"
+        - type: "pattern"
+          id: "list_group_item"
+          fields:
+            content: "The disabled link item"
+          settings:
+            disabled: true

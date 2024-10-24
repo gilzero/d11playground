@@ -1,0 +1,11 @@
+{% set attributes = attributes.addClass('carousel-item') %}
+{% set attributes = attributes.addClass('active') %}
+<div class="row">
+  <div class="col">
+    <div class="carousel slide">
+      <div class="carousel-inner">
+      {{ include('pattern-carousel-item.html.twig') }}
+      </div>
+    </div>
+  </div>
+</div>

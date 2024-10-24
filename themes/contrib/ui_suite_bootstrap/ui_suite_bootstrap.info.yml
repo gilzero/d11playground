@@ -1,0 +1,72 @@
+name: 'UI Suite Bootstrap'
+type: theme
+description: "A site-builder friendly Bootstrap theme, using the UI Suite modules."
+core_version_requirement: ^10.2 || ^11
+base theme: false
+dependencies:
+  - layout_options:layout_options
+  - ui_patterns:ui_patterns_library
+  - ui_patterns_settings:ui_patterns_settings (>=8.x-2.2 || >=3.0)
+  - ui_styles:ui_styles
+
+regions:
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  header: 'Top Bar'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+libraries:
+  - ui_suite_bootstrap/bootstrap
+  - ui_suite_bootstrap/accessibility
+  - ui_suite_bootstrap/component_placeholder
+  - ui_suite_bootstrap/form
+
+libraries-override:
+  core/drupal.active-link:
+    js:
+      misc/active-link.js: assets/js/misc/active-link.js
+  core/drupal.dropbutton: false
+  core/drupal.tableheader: false
+  text/drupal.text: ui_suite_bootstrap/drupal.text
+  clientside_validation_jquery/cv.jquery.ife: false
+  commerce_cart/cart_block: false
+  commerce_checkout/form: false
+  commerce_checkout/login_pane: false
+  paragraphs/drupal.paragraphs.unpublished: false
+
+libraries-extend:
+  core/drupal.ajax:
+    - ui_suite_bootstrap/drupal.ajax
+  core/drupal.checkbox:
+    - ui_suite_bootstrap/drupal.checkbox
+  core/drupal.dialog:
+    - ui_suite_bootstrap/drupal.dialog
+  core/drupal.dialog.ajax:
+    - ui_suite_bootstrap/drupal.dialog.ajax
+  core/drupal.dialog.off_canvas:
+    - ui_suite_bootstrap/drupal.dialog.off_canvas
+  core/drupal.message:
+    - ui_suite_bootstrap/drupal.message
+  core/drupal.progress:
+    - ui_suite_bootstrap/drupal.progress
+  core/drupal.tabledrag:
+    - ui_suite_bootstrap/drupal.tabledrag
+  system/base:
+    # @todo To remove when Core 10.3 will become minimum supported version.
+    - ui_suite_bootstrap/drupal.tabledrag
+  user/drupal.user:
+    - ui_suite_bootstrap/drupal.user
+  clientside_validation_jquery/cv.jquery.validate:
+    - ui_suite_bootstrap/jquery.validate
+
+# Information added by Drupal.org packaging script on 2024-10-17
+version: '5.0.0-alpha16'
+project: 'ui_suite_bootstrap'
+datestamp: 1729183383

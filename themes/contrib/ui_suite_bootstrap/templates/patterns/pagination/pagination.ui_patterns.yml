@@ -1,0 +1,31 @@
+pagination:
+  label: "Pagination"
+  description: "Indicate a series of related content exists across multiple pages."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/pagination/'
+  category: "Navigation"
+  variants:
+    sm:
+      label: "Smaller"
+    default:
+      label: "Default"
+    lg:
+      label: "Larger"
+  settings:
+    items:
+      type: links
+      label: Pagination items
+      preview:
+        - url: "#"
+          title: "« First"
+        - url: "#"
+          title: "‹ Previous"
+        - title: "4"
+        - url: "#"
+          title: "5"
+        - url: "#"
+          title: "6"
+        - url: "#"
+          title: "Next ›"
+        - url: "#"
+          title: "Last »"

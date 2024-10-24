@@ -1,0 +1,36 @@
+name: Emulsify
+type: theme
+description: The official base theme for Emulsify and it's flexible component driven development.
+base theme: stable9
+core_version_requirement: ^10 || ^11
+package: emulsify
+
+dependencies:
+  - 'drupal:components (^3.0)'
+  - 'drupal:emulsify_tools (^1.0)'
+
+libraries:
+  - emulsify/global
+
+regions:
+  header: Header
+  content_top: Content Top
+  content: Content
+  content_bottom: Content Bottom
+  footer: Footer
+
+logo: assets/images/logo.svg
+
+components:
+  namespaces:
+    base: components/00-base
+    atoms: components/01-atoms
+    molecules: components/02-molecules
+    organisms: components/03-organisms
+    templates: components/04-templates
+    pages: components/05-pages
+
+# Information added by Drupal.org packaging script on 2024-09-09
+version: '5.3.0'
+project: 'emulsify'
+datestamp: 1725910796

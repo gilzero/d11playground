@@ -1,0 +1,12 @@
+{% set modal_id = modal_id|default("modal-" ~ random()) %}
+
+{{ pattern('button', {
+  'variant': 'primary',
+  'label': 'Launch demo modal'|t,
+  'attributes': create_attribute({
+    'data-bs-target': '#' ~ modal_id,
+    'data-bs-toggle':'modal',
+  })
+}) }}
+
+{% include 'pattern-modal.html.twig' %}

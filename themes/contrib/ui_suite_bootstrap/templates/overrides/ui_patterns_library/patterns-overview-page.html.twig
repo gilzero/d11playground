@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * UI Pattern library page template, override this in your theme.
+ */
+#}
+{% if patterns is not empty %}
+
+{% set content %}
+  <div id="patterns-library" class="overflow-auto">
+    {# List of available patterns with anchor links. #}
+    {% for group_name, group_patterns in patterns %}
+      {% if patterns|length > 1 %}
+        <h3>{{ group_name }}</h3>
+      {% endif %}
+      <ul class="nav nav-pills flex-column">
+        {% for pattern_name, pattern in group_patterns %}
+          <li class="nav-item">
+            <a href="#{{ pattern_name }}" class="nav-link p-1">{{ pattern.label }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+{% endset %}
+
+<button class="btn btn-primary position-fixed bottom-0 end-0 mb-2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu-patterns" aria-controls="menu-patterns">
+  {{ 'Navigation'|t }}
+</button>
+{{ pattern('offcanvas', {
+  variant: 'start',
+  offcanvas_id: 'menu-patterns',
+  backdrop: 'false',
+  scroll: true,
+  heading_level: 2,
+  title: 'Available patterns'|t,
+  body: content
+}) }}
+
+<div class="row">
+  <div data-bs-spy="scroll" data-bs-target="#patterns-library" data-bs-smooth-scroll="true" tabindex="0" class="col col-12">
+    {% for group_name, group_patterns in patterns %}
+      {% for pattern_name, pattern in group_patterns %}
+        <div class="pattern-preview pattern-preview__{{ pattern.definition.id }}" id="{{ pattern_name }}">
+          {{ pattern.meta }}
+
+          {# Link to standalone pattern preview page.#}
+          <p class="my-3">
+            <a href="{{ url('ui_patterns.patterns.single', {'name': pattern_name}) }}" class="pattern-preview__view">
+              {% trans %}View {{ pattern.label }} as stand-alone{% endtrans %}
+            </a>
+          </p>
+
+          {# Rendered pattern preview. #}
+          {{ pattern.rendered }}
+        </div>
+
+        <hr class="my-5">
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

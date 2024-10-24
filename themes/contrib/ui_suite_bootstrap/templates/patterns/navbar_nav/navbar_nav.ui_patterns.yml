@@ -1,0 +1,36 @@
+navbar_nav:
+  label: "(Navbar nav)"
+  description: "Internal: to be used in the 'Navbar' component."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/navbar/'
+  category: "Navbar"
+  variants:
+    default:
+      label: "Default"
+    scroll:
+      label: "Scroll"
+  settings:
+    dropdown_id:
+      type: "textfield"
+      label: "ID"
+      description: "Must start with a letter. Randomly generated if empty."
+    items:
+      type: "links"
+      label: "Menu items"
+      description: "Full-height and lightweight navigation (including support for dropdowns)."
+      preview:
+        - title: "Home"
+          url: "https://example.com"
+        - title: "Library"
+          url: "https://example.com"
+          below:
+            - title: Dropdown header
+              link_attributes:
+                class: ["dropdown-header"]
+            - title: "Sub 1"
+              url: "https://example.com"
+            - {}
+            - title: "Sub 2 after divider"
+              url: "https://example.com"
+            - title: Dropdown text
+        - title: "Data"

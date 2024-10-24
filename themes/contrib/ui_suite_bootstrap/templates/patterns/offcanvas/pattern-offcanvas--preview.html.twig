@@ -1,0 +1,14 @@
+{% set offcanvas_id = offcanvas_id|default("offcanvas-" ~ random()) %}
+
+{{ pattern('button', {
+  variant: 'primary',
+  attributes: create_attribute({
+    'data-bs-target': '#' ~ offcanvas_id,
+    'data-bs-toggle': 'offcanvas',
+    'aria-controls': offcanvas_id,
+    'aria-expanded': 'false'
+  }),
+  label: 'Launch offcanvas'|t
+}) }}
+
+{% include 'pattern-offcanvas.html.twig' %}

@@ -1,0 +1,24 @@
+{# Use accordion if the content of the cart is displayed. #}
+{% if content %}
+  {{ pattern('accordion', {
+    'variant': 'default',
+    'attributes': attributes,
+    'content': [
+      pattern('accordion_item', {
+        'title': count_text,
+        'content': [
+          content,
+          links,
+        ]
+      })
+    ]
+  }) }}
+{% else %}
+  <div{{ attributes}}>
+    {{ pattern('button', {
+      'variant': 'link',
+      'url': url,
+      'label': count_text
+    }) }}
+  </div>
+{% endif %}

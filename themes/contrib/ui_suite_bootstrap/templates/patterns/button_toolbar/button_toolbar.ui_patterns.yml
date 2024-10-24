@@ -1,0 +1,34 @@
+button_toolbar:
+  label: "Button Toolbar"
+  description: "Combine sets of button groups into button toolbars for more complex components. Use utility classes as needed to space out groups, buttons, and more."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/button-group/#button-toolbar'
+  category: "Button"
+  settings:
+    label:
+      type: "textfield"
+      label: "Role"
+      description: "The toolbar label. Visually hidden. Used with assistive technologies."
+      preview: "Toolbar with button groups"
+      allow_token: true
+  fields:
+    groups:
+      type: "render"
+      label: "Groups"
+      description: "An array of 'button_group' patterns. Or other 'groupable' elements."
+      preview:
+        - type: "pattern_preview"
+          id: "button_group"
+          variant: "default"
+          attributes:
+            class:
+              - me-2
+        - type: "pattern_preview"
+          id: "button_group"
+          variant: "default"
+          attributes:
+            class:
+              - me-2
+        - type: "pattern_preview"
+          id: "button_group"
+          variant: "default"

@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the checkout progress.
+ *
+ * Available variables:
+ * - steps: An array of steps, where each step has the following keys:
+ *   - id: The step ID.
+ *   - label: The step label.
+ *   - position: 'previous', 'current' or 'next'.
+ *
+ * @ingroup themeable
+ */
+#}
+{# Prepare list group items. #}
+{% set items = [] %}
+{% for step in steps %}
+  {%
+    set list_group_item_classes = [
+    'checkout-progress--step',
+    'checkout-progress--step__' ~ step.position,
+    'flex-fill',
+  ]
+  %}
+  {% set list_group_item_attributes = create_attribute() %}
+  {% set items = items|merge([
+    pattern('list_group_item', {
+      'variant': 'primary',
+      'attributes': list_group_item_attributes.addClass(list_group_item_classes),
+      'content': step.label
+    })
+  ]) %}
+{% endfor %}
+
+{%
+  set list_group_classes = [
+  'checkout-progress',
+  'clearfix',
+]
+%}
+{% set list_group_attributes = create_attribute() %}
+{{ pattern('list_group', {
+  'variant': 'numbered__horizontal',
+  'attributes': list_group_attributes.addClass(list_group_classes),
+  'items': items
+}) }}

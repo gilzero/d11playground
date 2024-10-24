@@ -1,0 +1,25 @@
+carousel_item:
+  label: "(Carousel Item)"
+  description: "Internal: to be used in the 'Carousel' component."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/carousel/'
+  category: "Carousel"
+  fields:
+    image:
+      type: "render"
+      label: "Image"
+      description: "The image of the item."
+      preview:
+        theme: "image"
+        uri: "data:image/svg+xml;base64,PHN2ZyBzdHlsZT0iZm9udC1zaXplOiAzLjVyZW07IHRleHQtYW5jaG9yOiBtaWRkbGU7IHVzZXItc2VsZWN0OiBub25lIiB3aWR0aD0iMTkyMCIgaGVpZ2h0PSI2NDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgc2xpY2UiIGZvY3VzYWJsZT0iZmFsc2UiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iUGxhY2Vob2xkZXI6IEZpcnN0IHNsaWRlIj48dGl0bGU+UGxhY2Vob2xkZXI8L3RpdGxlPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiM3NzciPjwvcmVjdD48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZmlsbD0iIzU1NSIgZHk9Ii4zZW0iPkZpcnN0IHNsaWRlPC90ZXh0Pjwvc3ZnPgo="
+    caption:
+      type: "render"
+      label: "Caption"
+      description: "The caption of the item."
+      preview:
+        - type: "html_tag"
+          tag: "h5"
+          value: "Slide label"
+        - type: "html_tag"
+          tag: "p"
+          value: "Nulla vitae elit libero, a pharetra augue mollis interdum."

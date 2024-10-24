@@ -1,0 +1,16 @@
+breadcrumb:
+  label: "Breadcrumb"
+  description: "Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/breadcrumb/'
+  category: "Navigation"
+  settings:
+    items:
+      type: links
+      label: Items
+      preview:
+        - title: Home
+          url: "#"
+        - title: Library
+          url: "#"
+        - title: Data

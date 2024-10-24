@@ -1,0 +1,74 @@
+toast:
+  label: "Toast"
+  description: "Push notifications to your visitors with a toast, a lightweight and easily customizable alert message."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/toast/'
+  category: "Toast"
+  settings:
+    delay:
+      type: "number"
+      label: "Hide delay"
+      description: "The duration before automatically hide the toast. In ms. 0 to disable the automatic hide."
+      default_value: 5000
+      allow_expose: true
+      allow_token: true
+    role:
+      type: "select"
+      label: "Role"
+      description: "Adapt the role level depending on the content. If it’s an important message like an error, use alert, otherwise use status."
+      options:
+        alert: "Alert (Default)"
+        status: "Status"
+        log: "Log"
+      preview: "alert"
+      allow_expose: true
+      allow_token: true
+    flex_wrapper:
+      type: "boolean"
+      label: "Add inside flex wrapper"
+      description: "Add a flex wrapper inside the toast, see https://getbootstrap.com/docs/5.3/components/toasts/#custom-content. Default: false"
+      preview: false
+      allow_expose: true
+      allow_token: true
+    hide_close_button:
+      type: "boolean"
+      label: "Hide close button"
+      description: "If checked, you will have to provide a close button in another way. Default: false"
+      preview: false
+      allow_expose: true
+      allow_token: true
+    close_button_variant:
+      type: "select"
+      label: "Close button variant"
+      options:
+        default: "Default (Default)"
+        white: "White"
+      preview: "default"
+      allow_expose: true
+      allow_token: true
+  fields:
+    header:
+      type: "render"
+      label: "Header"
+      description: "Toast header."
+      preview:
+        - theme: "image"
+          uri: "data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iYmQtcGxhY2Vob2xkZXItaW1nIHJvdW5kZWQgbWUtMiIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBzbGljZSIgZm9jdXNhYmxlPSJmYWxzZSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzAwN2FmZiI+PC9yZWN0Pjwvc3ZnPg=="
+          attributes:
+            class:
+              - "rounded"
+              - "me-2"
+        - type: "html_tag"
+          tag: "strong"
+          value: "Bootstrap"
+          attributes:
+            class:
+              - "me-auto"
+        - type: "html_tag"
+          tag: "small"
+          value: "11 mins ago"
+    content:
+      type: "render"
+      label: "Content toast"
+      description: "The toast item content."
+      preview: "Hello, world! This is a toast message."

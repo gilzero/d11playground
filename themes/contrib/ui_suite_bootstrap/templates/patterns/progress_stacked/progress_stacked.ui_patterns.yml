@@ -1,0 +1,39 @@
+progress_stacked:
+  label: "Progress stacked"
+  description: "You can include multiple progress components inside a container with .progress-stacked to create a single stacked progress bar. Note that in this case, the styling to set the visual width of the progress bar must be applied to the .progress elements, rather than the .progress-bars."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/progress/#multiple-bars'
+  category: "Progress"
+  fields:
+    items:
+      type: "render"
+      label: "Progress bars"
+      description: "The progress bars to stack."
+      preview:
+        - type: "pattern"
+          id: "progress"
+          aria_label: "Segment one"
+          percent: 15
+          min: 0
+          max: 100
+          stacked: true
+        - type: "pattern"
+          id: "progress"
+          aria_label: "Segment two"
+          percent: 30
+          min: 0
+          max: 100
+          stacked: true
+          attributes:
+            class:
+              - "bg-success"
+        - type: "pattern"
+          id: "progress"
+          aria_label: "Segment three"
+          percent: 20
+          min: 0
+          max: 100
+          stacked: true
+          attributes:
+            class:
+              - "bg-info"

@@ -1,0 +1,197 @@
+dropdown:
+  label: "Dropdown"
+  description: "Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/dropdowns/'
+  category: "Dropdown"
+  variants:
+    dropdown:
+      label: "Dropdown (Default)"
+    dropdown_center:
+      label: "Centered dropdown"
+    dropup:
+      label: "Dropup"
+    dropup_center:
+      label: "Centered dropup"
+    dropend:
+      label: "Dropend"
+    dropstart:
+      label: "Dropstart"
+  settings:
+    content:
+      type: "links"
+      label: "Content"
+      description: "If a link does not have a URL, it renders as: a header if it has the 'dropdown-header' class; a button if it has the 'dropdown-item' class; else a text. If a link does not have a url and a title or has the 'dropdown-divider' class, it renders as a divider."
+      preview:
+        - title: "Dropdown header"
+          link_attributes:
+            class: [dropdown-header]
+        - title: "Action"
+          url: '#'
+        - title: "Dropdown item text"
+        - title: "Another action"
+          url: '#'
+        - title: "Something else here"
+          url: '#'
+        - {}
+        - title: "Separated link"
+          url: '#'
+        - title: "Action (button)"
+          link_attributes:
+            class: [dropdown-item]
+        - title: "Another action (button)"
+          link_attributes:
+            class: [dropdown-item]
+        - title: "Something else here (text)"
+    dropdown_id:
+      type: "textfield"
+      label: "ID"
+      description: "Must start with a letter. Randomly generated if empty."
+    button_variant:
+      type: "select"
+      label: "Button variant"
+      options:
+        primary: "Primary (default)"
+        secondary: "Secondary"
+        success: "Success"
+        danger: "Danger"
+        warning: "Warning"
+        info: "Info"
+        light: "Light"
+        dark: "Dark"
+        link: "Link"
+        primary__sm: "Primary small"
+        secondary__sm: "Secondary small"
+        success__sm: "Success small"
+        danger__sm: "Danger small"
+        warning__sm: "Warning small"
+        info__sm: "Info small"
+        light__sm: "Light small"
+        dark__sm: "Dark small"
+        link__sm: "Link small"
+        primary__lg: "Primary large"
+        secondary__lg: "Secondary large"
+        success__lg: "Success large"
+        danger__lg: "Danger large"
+        warning__lg: "Warning large"
+        info__lg: "Info large"
+        light__lg: "Light large"
+        dark__lg: "Dark large"
+        link__lg: "Link large"
+        outline_primary__sm: "Outline Primary small"
+        outline_secondary__sm: "Outline Secondary small"
+        outline_success__sm: "Outline Success small"
+        outline_danger__sm: "Outline Danger small"
+        outline_warning__sm: "Outline Warning small"
+        outline_info__sm: "Outline Info small"
+        outline_light__sm: "Outline Light small"
+        outline_dark__sm: "Outline Dark small"
+        outline_primary: "Outline Primary"
+        outline_secondary: "Outline Secondary"
+        outline_success: "Outline Success"
+        outline_danger: "Outline Danger"
+        outline_warning: "Outline Warning"
+        outline_info: "Outline Info"
+        outline_light: "Outline Light"
+        outline_dark: "Outline Dark"
+        outline_primary__lg: "Outline Primary large"
+        outline_secondary__lg: "Outline Secondary large"
+        outline_success__lg: "Outline Success large"
+        outline_danger__lg: "Outline Danger large"
+        outline_warning__lg: "Outline Warning large"
+        outline_info__lg: "Outline Info large"
+        outline_light__lg: "Outline Light large"
+        outline_dark__lg: "Outline Dark large"
+      allow_expose: true
+      allow_token: true
+      preview: primary
+      default: primary
+    button_split:
+      type: "boolean"
+      label: "Split"
+      description: "Create split button dropdowns with virtually the same markup as single button dropdowns, but with the addition of .dropdown-toggle-split for proper spacing around the dropdown caret."
+      preview: true
+      allow_expose: true
+      allow_token: true
+    button_url:
+      label: "Button URL"
+      type: url
+      preview: "/"
+    button_attributes:
+      type: "attributes"
+      label: "Button attributes"
+      description: "The attributes to customize the dropdown button."
+      preview: ''
+      allow_expose: true
+    dark:
+      type: "boolean"
+      label: "Dark (deprecated)"
+      description: "Opt into darker dropdowns to match a dark navbar or custom style."
+      preview: false
+      allow_expose: true
+      allow_token: true
+    auto_close:
+      type: "select"
+      label: "Auto close"
+      description: "By default, the dropdown menu is closed when clicking inside or outside the dropdown menu. You can use the autoClose option to change this behavior of the dropdown."
+      options:
+        'true': "Default"
+        'inside': "When click inside"
+        'outside': "When click outside"
+        'false': "Manual close"
+      preview: "true"
+      allow_expose: true
+      allow_token: true
+    dropdown_navbar:
+      type: "boolean"
+      label: "Use in navbar?"
+      description: "Check if the dropdown will be used in a navbar-nav element."
+      preview: false
+      allow_expose: true
+      allow_token: true
+    dropdown_menu_start:
+      type: "select"
+      label: "Menu alignment: start"
+      description: "To align left/start the dropdown menu with the given breakpoint or larger."
+      options:
+        start: "all"
+        sm-start: "from small"
+        md-start: "from medium"
+        lg-start: "from large"
+        xl-start: "from extra large"
+        xxl-start: "from extra extra large"
+      preview: ''
+      allow_expose: true
+      allow_token: true
+    dropdown_menu_end:
+      type: "select"
+      label: "Menu alignment: end"
+      description: "To align right/end the dropdown menu with the given breakpoint or larger."
+      options:
+        end: "all"
+        sm-end: "from small"
+        md-end: "from medium"
+        lg-end: "from large"
+        xl-end: "from extra large"
+        xxl-end: "from extra extra large"
+      preview: ''
+      allow_expose: true
+      allow_token: true
+    heading_level:
+      type: "select"
+      label: "Heading level for header items"
+      options:
+        2: "h2"
+        3: "h3"
+        4: "h4"
+        5: "h5"
+        6: "h6 (Default)"
+      preview: 6
+      allow_expose: true
+      allow_token: true
+  fields:
+    title:
+      type: "text"
+      label: "Title"
+      description: "The dropdown button title. Plain text."
+      preview: "Button"

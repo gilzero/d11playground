@@ -1,0 +1,29 @@
+spinner:
+  label: "Spinner"
+  description: "Indicate the loading state of a component or page with Bootstrap spinners, built entirely with HTML, CSS, and no JavaScript."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/spinners'
+  variants:
+    border__border_sm:
+      label: "Border small"
+    border:
+      label: "Border"
+    grow__grow_sm:
+      label: "Growing small"
+    grow:
+      label: "Growing"
+  settings:
+    aria_hidden:
+      type: "boolean"
+      label: "Aria hidden"
+      description: "Hide the spinner for assistive technology. When a label is also present outside of the spinner."
+      preview: false
+      allow_expose: true
+      allow_token: true
+    visually_hidden_label:
+      type: "textfield"
+      label: "Visually hidden label"
+      description: "A visually hidden label if the spinner is used as standalone."
+      preview: 'Loading...'
+      allow_expose: true
+      allow_token: true

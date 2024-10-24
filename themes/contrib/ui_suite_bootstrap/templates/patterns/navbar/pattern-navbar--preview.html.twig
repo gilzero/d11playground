@@ -1,0 +1,7 @@
+{% if 'dark' in variant|lower %}
+  {% set attributes = attributes.addClass('bg-dark') %}
+{% else %}
+  {% set attributes = attributes.addClass('bg-light') %}
+{% endif %}
+
+{% extends 'pattern-navbar.html.twig' %}

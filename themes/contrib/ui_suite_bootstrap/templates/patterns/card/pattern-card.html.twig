@@ -1,0 +1,42 @@
+{% if variant and variant|lower == 'horizontal' %}
+  <div{{ attributes.addClass('card') }}>
+    <div class="row g-0">
+      <div class="{{ image_col_classes|default('col-md-4') }}">
+        {{ image|add_class('img-fluid rounded-start') }}
+      </div>
+      <div class="{{ content_col_classes|default('col-md-8') }}">
+        {% if header %}
+          <div class="card-header">
+            {{ header }}
+          </div>
+        {% endif %}
+        {{ content }}
+        {% if footer %}
+          <div class="card-footer">
+            {{ footer }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% else %}
+  <div{{ attributes.addClass('card') }}>
+    {% if image and image_position != 'bottom' %}
+      {{ image|add_class('card-img-top') }}
+    {% endif %}
+    {% if header %}
+      <div class="card-header">
+        {{ header }}
+      </div>
+    {% endif %}
+    {{ content }}
+    {% if footer %}
+      <div class="card-footer">
+        {{ footer }}
+      </div>
+    {% endif %}
+    {% if image and image_position == 'bottom' %}
+      {{ image|add_class('card-img-bottom') }}
+    {% endif %}
+  </div>
+{% endif %}

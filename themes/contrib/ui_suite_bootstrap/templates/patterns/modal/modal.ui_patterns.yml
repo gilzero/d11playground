@@ -1,0 +1,99 @@
+modal:
+  label: "Modal"
+  description: "Use Bootstrap's JavaScript modal plugin to add dialogs to your site for lightboxes, user notifications, or completely custom content."
+  links:
+    - 'https://getbootstrap.com/docs/5.3/components/modal/'
+  category: "Dialog"
+  variants:
+    sm:
+      label: "Small"
+    default:
+      label: "Default"
+    lg:
+      label: "Large"
+    xl:
+      label: "Extra large"
+  settings:
+    animation:
+      type: "boolean"
+      label: "Animation"
+      description: "For modals that simply appear rather than fade in to view."
+      preview: true
+      allow_expose: true
+      allow_token: true
+    static:
+      type: "boolean"
+      label: "Static backdrop"
+      description: "When checked, the modal will not close when clicking outside of it."
+      preview: false
+      allow_expose: true
+      allow_token: true
+    centered:
+      type: "boolean"
+      label: "Vertically centered"
+      description: "Vertically center the modal."
+      preview: false
+      allow_expose: true
+      allow_token: true
+    scrollable:
+      type: "boolean"
+      label: "Scrollable"
+      description: "Allows to scroll the modal body."
+      preview: false
+      allow_expose: true
+      allow_token: true
+    fullscreen:
+      type: "select"
+      label: "Fullscreen"
+      description: "Pop up a modal that covers the user viewport."
+      options:
+        modal-fullscreen: "Always"
+        modal-fullscreen-sm-down: "Below small"
+        modal-fullscreen-md-down: "Below medium"
+        modal-fullscreen-lg-down: "Below large"
+        modal-fullscreen-xl-down: "Below extra large"
+        modal-fullscreen-xxl-down: "Below extra extra large"
+    heading_level:
+      type: "select"
+      label: "Heading level"
+      description: "Heading level of the modal."
+      options:
+        1: "h1 (Default)"
+        2: "h2"
+        3: "h3"
+        4: "h4"
+        5: "h5"
+        6: "h6"
+      preview: 1
+    modal_id:
+      type: "textfield"
+      label: "ID"
+      description: "ID used by external buttons to toggle the visibility. Must start with a letter. Randomly generated if empty."
+  fields:
+    title:
+      type: "string"
+      label: "Title"
+      description: "Modal title."
+      preview: "Modal title"
+    body:
+      type: "render"
+      label: "Body"
+      description: "The content of the modal."
+      preview: "Modal body text goes here."
+    footer:
+      type: "render"
+      label: "Footer content"
+      description: "Footer content"
+      preview:
+        - type: "pattern"
+          id: "button"
+          variant: "secondary__sm"
+          fields:
+            label: "Close"
+          attributes:
+            data-bs-dismiss: "modal"
+        - type: "pattern"
+          id: "button"
+          variant: "primary__sm"
+          fields:
+            label: "Save changes"
